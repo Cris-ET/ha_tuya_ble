@@ -144,6 +144,24 @@ mapping: dict[str, TuyaBLECategorySensorMapping] = {
                     TuyaBLEBatteryMapping(dp_id=8),
                 ],
             ),
+            **dict.fromkeys(
+                ["isljqiq1"],
+                [
+                    TuyaBLESensorMapping(
+                        dp_id=21,
+                        description=SensorEntityDescription(
+                            key="alarm_lock",
+                            device_class=SensorDeviceClass.ENUM,
+                            options=[
+                                "wrong_finger",
+                                "wrong_password",
+                                "low_battery",
+                            ],
+                        ),
+                    ),
+                    TuyaBLEBatteryMapping(dp_id=9),
+                ],
+            ),
         }
     ),
     "szjqr": TuyaBLECategorySensorMapping(
